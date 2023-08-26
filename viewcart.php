@@ -1,9 +1,7 @@
 <?php
   session_start();
   $email = $_SESSION['email'];
-  if($email==null){
-    header('location:login.php?id=home');
-  }
+ 
   $msg = $_SESSION['view_cart'];
   $_SESSION['view_cart']=null;
   $msg1 = $_SESSION['view_cart1'];
@@ -44,9 +42,58 @@ if(mysqli_num_rows($run)>0){
 
 <body>
   
-<?php 
-  include('header3.html');
-  ?>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <div class="logo">
+      <a href="userhome.php">
+      <img class = "logo" src="img/LOGO3.png" alt="img">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto test">
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="userhome.php"><i class="fa-solid fa-house-user"></i> Home</a>
+      </li>
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="#Sec"><i class="fa-brands fa-pagelines"></i> Plants</a>
+      </li>
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="#Sec2"><i class="fa-solid fa-seedling"></i> Seeds</a>
+      </li>
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="#Sec3"><i class="fa-solid fa-briefcase"></i> Other Services</a>
+      </li>
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="#Sec4"><i class="fa-solid fa-u"></i> Pots</a>
+      </li>
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="feedback.php"><i class="fa-solid fa-comment"></i> Give Feedback</a>
+      </li>
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="rqst_product.php"><i class="fa-solid fa-list-check"></i> Request Plants</a>
+      </li>
+        <!-- <li class="nav-item">
+        <a id= "test2" class="nav-link" href="Recycled_Product.php"><i class="fa-solid fa-recycle"></i> My Recycles</a>
+      </li> -->
+      <li class="nav-item">
+          <a id= "test2" class="nav-link" href="suggetion.php"><i class="fa-solid fa-bag-shopping">Suggetion</i></a>
+        </li>
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="viewcart.php"><i class="fa-solid fa-bag-shopping"></i> My Cart</a>
+      </li>
+
+      <li class="nav-item">
+        <a id= "test2" class="nav-link" href="logout.php"><i class="fa-solid fa-user"></i> Logout</a>
+      </li>
+      
+    </ul>
+    </div>
+    </nav>
+    
 
   
   <div id="cta">
@@ -68,7 +115,7 @@ if(mysqli_num_rows($run)>0){
   </div>
   
    <div class="col-lg-12 col-md-12 col-sm-12" id = "pad3">
-   <button type="submit" class="btn btn-lg btn-block btn-success"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+   <button type="submit" class="btn btn-lg btn-block btn-success submittt"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
    <button onclick="window.location.href='viewcart.php'" type="button" class="btn btn-lg btn-block btn-info"><i class="fa-solid fa-list"></i> See All</button>
    </div>
   </form>

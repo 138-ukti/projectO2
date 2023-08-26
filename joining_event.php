@@ -51,5 +51,6 @@ $result3 = mysqli_query($con, $sql3);
 
 // session_start();
 $_SESSION['going'] = 'Successfully Join this event';
-header("Location: userhome.php #event");
+echo "<script>alert('Your going is save successfully.'); window.location.href='userhome.php'</script>";
+// header("Location: userhome.php #event");
 ?>
